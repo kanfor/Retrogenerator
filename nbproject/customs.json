@@ -1,0 +1,11 @@
+{
+    "elements": {},
+    "attributes": {
+        "[(ngmodel)]": {
+            "context": "input"
+        },
+        "(click)": {
+            "context": "button"
+        }
+    }
+}
