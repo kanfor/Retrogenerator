@@ -4,15 +4,17 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 //El componente que viene por defecto en CLI.
-import {AppComponent} from './app.component';
-
-//Mi nuevo componente. Falta revisar la nomenglatura.
-import { SupercomponenteComponent } from './supercomponente/supercomponente.component';
+import { TituloComponent } from './titulo/titulo.component';
+import { MosaicoComponent } from './mosaico/mosaico.component';
+import { EditorComponent } from './editor/editor.component';
+import { CompartirComponent } from './compartir/compartir.component';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        SupercomponenteComponent
+        TituloComponent,
+        MosaicoComponent,
+        EditorComponent,
+        CompartirComponent,
     ],
     imports: [
         BrowserModule,
@@ -21,8 +23,10 @@ import { SupercomponenteComponent } from './supercomponente/supercomponente.comp
     ],
     providers: [],
     bootstrap: [
-        AppComponent,
-        SupercomponenteComponent
+        TituloComponent,
+        MosaicoComponent,
+        EditorComponent,
+        CompartirComponent,
     ]
 })
 export class AppModule {}
