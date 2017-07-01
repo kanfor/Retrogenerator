@@ -1,19 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-compartir',
-    templateUrl: './compartir.component.html',
-    styleUrls: ['./compartir.component.css']
+  selector: 'app-compartir',
+  templateUrl: './compartir.component.html',
+  styleUrls: ['./compartir.component.css']
 })
 export class CompartirComponent implements OnInit {
 
-    activo: boolean = false;
+  constructor() { }
 
-    constructor() {}
-
-    ngOnInit()
-    {
-
-    }
+  ngOnInit() {
+  }
 
 }

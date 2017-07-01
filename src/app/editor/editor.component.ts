@@ -1,23 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-
-import {numPag} from 'app/titulo/titulo.component';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-editor',
-    templateUrl: './editor.component.html',
-    styleUrls: ['./editor.component.css']
+  selector: 'app-editor',
+  templateUrl: './editor.component.html',
+  styleUrls: ['./editor.component.css']
 })
 export class EditorComponent implements OnInit {
 
-    activo: boolean;
-    numPag: number;
+  constructor() { }
 
-    constructor() {}
-
-    ngOnInit()
-    {
-        this.activo = false;
-        this.numPag = numPag;
-    }
+  ngOnInit() {
+  }
 
 }
