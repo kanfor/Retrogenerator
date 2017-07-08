@@ -1,5 +1,41 @@
 <app-header>Loading...</app-header>
 
-<p>
-  Y aquí iría un fantástico editor... cuando halla uno.
-</p>
+<div id="medicion" class="row">
+  <p id="titulo" class="text-center container">
+    Edite el título de la portada
+  </p>
+  
+  <div id="edicion" class="col-6">
+    <img id="imagen" src="./assets/{{selectedCover}}.jpg">
+    <p id="ttitulo" [ngStyle]="{'font-size': oTitulo.new_size, 'color': color}" class="text-center"><b>{{oTitulo.texto}}</b></p>
+    <p id="tsubtitulo" [ngStyle]="{'font-size': oSubtitulo.new_size, 'color': color}"class="text-center"><b>{{oSubtitulo.texto}}</b></p>
+  </div>
+  <div id="miunputs" class="col-6">
+    <div>
+      <label><b>TITULO: </b></label>
+      <input maxlength="25" [ngModel]="oTitulo.texto" (ngModelChange)="edicionObjetoTexto($event, oTitulo)" placeholder="Título">
+    </div>
+    <div>
+      <label><b>SUBTITULO: </b></label>
+      <input maxlength="30" [ngModel]="oSubtitulo.texto" (ngModelChange)="edicionObjetoTexto($event, oSubtitulo)" placeholder="Subtítulo">
+    </div>
+    <div>
+      <label><b>COLOR: </b></label>
+      <select [(ngModel)]="color">
+        <option value="white">BLANCO</option>
+        <option value="yellow">AMARILLO</option>
+        <option value="red">ROJO</option>
+        <option value="blue">AZUL</option>
+        <option value="green">VERDE</option>
+      </select>
+    </div>
+    <button routerLink="/compartir" [queryParams]="{
+            selected: selectedCover,
+            titulo: oTitulo.texto,
+            tituloSize: oTitulo.new_size,
+            subtitulo: oSubtitulo.texto,
+            subtituloSize: oSubtitulo.new_size,
+            color: color
+            }" class="btn btn-success" style="cursor:pointer">GENERAR</button>
+  </div>
+</div>

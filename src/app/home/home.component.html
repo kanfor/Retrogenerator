@@ -1,5 +1,20 @@
 <app-header>Loading...</app-header>
 
-<p>
-  Y aquí iría un precioso mosaico... cuando haya uno.
-</p>
+<div class="row">
+  <p id="titulo" class="text-center container">
+    Seleccione la imagen para construir su nueva portada
+  </p>
+</div>
+
+<div class="row">
+  <a *ngFor="let mycover of cover"
+    href="#" class="col-6 col-md-4 contendor text-center"
+    routerLink="/editor" [queryParams]="{ selected: mycover.id }">
+      <img src="./assets/{{mycover.id}}.jpg">
+      <div class="overlay">
+        <div class="text">
+          <p>USAR ESTA IMAGEN</p>
+        </div>
+      </div>
+  </a>
+</div>
