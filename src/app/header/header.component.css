@@ -1,0 +1,9 @@
+#header h1 {
+  color: #949494;
+  padding: 0.5em 1em 0.5em 1em;
+  background-color: rgb(239, 239, 239);
+}
+
+#links a {
+  margin: 0em;
+}

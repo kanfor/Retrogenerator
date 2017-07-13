@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+.row {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+@media (max-width: 1200px) {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+}
+
+#titulo {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+

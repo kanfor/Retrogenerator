@@ -1,5 +1,21 @@
 <app-header>Loading...</app-header>
 
-<p>
-  Y aquí iría un apasionante compartir... cuando halla uno.
-</p>
+<div id="mcompatir" class="row">
+  <div id="mcover" class="col-6 text-center centrar">
+    <img id="imagen" src="./assets/{{selectedCover}}.jpg">
+    <p id="ttitulo" [ngStyle]="{'font-size': objetoTitulo.size, 'color': color}" class="text-center"><b>{{objetoTitulo.texto}}</b></p>
+    <p id="tsubtitulo" [ngStyle]="{'font-size': objetoSubtitulo.size, 'color': color}" class="text-center"><b>{{objetoSubtitulo.texto}}</b></p>
+  </div>
+  <div class="col-12 text-center">
+    <p>Link para compartir esta portada:</p>
+  </div>
+  <div class="col-12 text-center">
+    <p id="mlink" [ngStyle]="{'font-size': sizeFontLink}">{{urlCompartir}}</p>
+  </div>
+  <div class="col-12 text-center">
+    <button class="btn btn-primary" style="cursor:pointer">COMPARTIR EN FACEBOOK</button>
+  </div>
+  <div class="col-12 text-center">
+    <button routerLink="/home" class="btn btn-info btn-block" style="cursor:pointer">CREAR NUEVA PORTADA</button>
+  </div>
+</div>

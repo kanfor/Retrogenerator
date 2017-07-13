@@ -1,0 +1,59 @@
+#medicion {
+  margin-bottom: 3em;
+}
+
+#imagen {
+  margin: auto;
+  display: block;
+  width: 80%;
+}
+
+#edicion {
+  position: relative; 
+}
+
+#ttitulo {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  color: white;
+  font-size: 3em;
+  margin-top: 5%;
+  text-shadow:
+    -3px -1px 0 black,  
+    3px -1px 0 black,
+    -3px 1px 0 black,
+    3px 1px 0 black;
+}
+
+#tsubtitulo {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  color: white;
+  font-size: 2em;
+  margin-top: 20%;
+  text-shadow:
+    -3px -1px 0 black,  
+    3px -1px 0 black,
+    -3px 1px 0 black,
+    3px 1px 0 black;
+}
+
+#miunputs {
+  font-size: 1.2em;
+  line-height: 70%;
+}
+
+label {
+  margin-bottom: 5vw;
+}
+
+input {
+  float: right;
+}
+
+select {
+  float: right;
+}
+

@@ -1,0 +1,51 @@
+.contendor {
+  margin-bottom: 3em;
+}
+
+.contendor img {
+  padding: 1.5vw;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.contendor:hover img {
+  opacity: 0.5;
+}
+
+.contendor:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  font-weight: bold;
+  padding: 0.5em 1em 0.5em 1em;
+  background-color: #008CBA;
+  color: white;
+  font-size: 1.2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.text p {
+  margin-bottom: 0;
+}
