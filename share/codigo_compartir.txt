@@ -1,3 +1,6 @@
+//Añade un contador PHP.
+
+
 function Copy() {
   var Url = document.getElementById("url");
   
