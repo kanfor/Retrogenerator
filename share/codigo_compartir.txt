@@ -1,15 +1,40 @@
 function Copy() {
   var Url = document.getElementById("url");
+  
+  //Creo que esto sobra. Sí, sobra, salvo que quieras copiar la URL.
   Url.innerHTML = window.location.href;
   console.log(Url.innerHTML)
+  
+  //Creo que solo lo siguiente es necesario.
   Url.select();
   document.execCommand("copy");
 }
-
-
-
 
 <div>
   <input type="button" value="Copy Url" onclick="Copy();" />
   <br /> Paste: <textarea id="url" rows="1" cols="30"></textarea>
 </div>
+
+
+
+
+
+
+
+
+//////////////////////////////////////
+<div style="position:fixed;top: -1000px;">
+  <input type="button" value="Copy Url" onclick="Copy();" />
+  <br /> Paste: <textarea id="url" rows="1" cols="30"></textarea>
+</div>
+
+<button onclick="Copy();">HOLA</button>
+
+
+function Copy() {
+  var Url = document.getElementById("url");
+  //Da igual el value. Fuerzas aqui el contenido.
+  Url.innerHTML = "perrato";
+  Url.select();
+  document.execCommand("copy");
+}
