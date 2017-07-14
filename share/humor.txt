@@ -1,0 +1,6 @@
+1.- Jugar a un juego Spectrum en un emulador de PC.
+2.- Jugarlo en un ZX-Uno.
+3.- Jugarlo en un ZX-Uno esperando su tiempo real de carga.
+3.- Bajarte el juego y con un MP3 reproducirlo en un Spectrum real.
+5.- Comprar el juego en Milanuncios y jugarlo en un Spectrum real conectado a una TV CRT.
+5.- Bajarte el juego, grabarlo en una cinta, y jugarlo en un Spectrum real conectado a una TV CRT.
