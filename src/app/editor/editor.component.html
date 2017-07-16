@@ -7,13 +7,13 @@
   
   <div id="edicion" class="col-6">
     <img id="imagen" src="./assets/{{selectedCover}}.jpg">
-    <p id="ttitulo" [ngStyle]="{'font-size': oTitulo.new_size, 'color': color}" class="text-center"><b>{{oTitulo.texto}}</b></p>
-    <p id="tsubtitulo" [ngStyle]="{'font-size': oSubtitulo.new_size, 'color': color}"class="text-center"><b>{{oSubtitulo.texto}}</b></p>
+    <p id="ttitulo" [ngStyle]="{'font-size': oTitulo.new_size, 'color': color, 'font-family': familia}" class="text-center"><b>{{oTitulo.texto}}</b></p>
+    <p id="tsubtitulo" [ngStyle]="{'font-size': oSubtitulo.new_size, 'color': color, 'font-family': familia}"class="text-center"><b>{{oSubtitulo.texto}}</b></p>
   </div>
   <div id="miunputs" class="col-6">
     <div>
       <label><b>TITULO: </b></label>
-      <input maxlength="25" [ngModel]="oTitulo.texto" (ngModelChange)="edicionObjetoTexto($event, oTitulo)" placeholder="Título">
+      <input maxlength="23" [ngModel]="oTitulo.texto" (ngModelChange)="edicionObjetoTexto($event, oTitulo)" placeholder="Título">
     </div>
     <div>
       <label><b>SUBTITULO: </b></label>
@@ -26,7 +26,16 @@
         <option value="yellow">AMARILLO</option>
         <option value="red">ROJO</option>
         <option value="blue">AZUL</option>
-        <option value="green">VERDE</option>
+        <option value="greenyellow">VERDE</option>
+      </select>
+    </div>
+    <div>
+      <label><b>LETRA: </b></label>
+      <select [(ngModel)]="familia" (click)="refreshFont(true)">
+        <option value="font1">Fuente1</option>
+        <option value="font2">Fuente2</option>
+        <option value="font3">Fuente3</option>
+        <option value="font4">Fuente4</option>
       </select>
     </div>
     <button routerLink="/compartir" [queryParams]="{
@@ -35,7 +44,8 @@
             tituloSize: oTitulo.new_size,
             subtitulo: oSubtitulo.texto,
             subtituloSize: oSubtitulo.new_size,
-            color: color
+            color: color,
+            familia: familia
             }" class="btn btn-success" style="cursor:pointer">GENERAR</button>
   </div>
 </div>

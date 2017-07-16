@@ -3,11 +3,20 @@
   margin-bottom: 3em;
 }
 
+#url {
+  top: -300px;
+  position: fixed;
+}
+
 #imagen {
   margin: auto;
   display: block;
   width: 80%;
   margin-bottom: 3em;
+}
+
+.copyclip {
+  background-color: greenyellow;
 }
 
 #mcover {
@@ -20,7 +29,7 @@ button {
 
 #ttitulo {
   position: absolute;
-  width: 100%;
+  width: 95%;
   top: 0;
   color: white;
   font-size: 3em;
@@ -34,7 +43,7 @@ button {
 
 #tsubtitulo {
   position: absolute;
-  width: 100%;
+  width: 95%;
   top: 0;
   color: white;
   font-size: 2em;

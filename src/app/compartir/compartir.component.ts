@@ -13,10 +13,12 @@ export class CompartirComponent implements OnInit {
   data: any;
   selectedCover: number;
   color: string;
+  familia: string;
   objetoTitulo: ObjetoTexto;
   objetoSubtitulo: ObjetoTexto;
   urlCompartir: string;
   sizeFontLink: string = "0.8em";
+  boolCopy: boolean = false;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -42,8 +44,27 @@ export class CompartirComponent implements OnInit {
         this.objetoTitulo.size = params['tituloSize'];
         this.objetoSubtitulo.texto = params['subtitulo'];
         this.objetoSubtitulo.size = params['subtituloSize'];
+        this.familia = params['familia'];
         this.color = params['color'];
+        console.log("La familia es " + this.familia);
       });
+  }
+  
+  copyClipboard() {
+    this.boolCopy = true;
+    let Url: any = document.getElementById("url");
+    Url.innerHTML = this.urlCompartir;
+    Url.select();
+    document.execCommand("copy");
+  }
+  
+  shareFacebook() {
+    let url = 'https://www.facebook.com/sharer/sharer.php?u=' + this.urlCompartir;
+    let height = 250;
+    let width = 550;
+    let top = 0;
+    let left = 0;
+    window.open(url, '', 'left=200,top='+top+',width='+width+',height='+height+',personalbar=0,toolbar=0,scrollbars=0,resizable=0');
   }
 
 }
