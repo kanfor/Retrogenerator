@@ -49,3 +49,14 @@ img {
 .text p {
   margin-bottom: 0;
 }
+
+@media only screen and (max-width: 1000px) {
+  #titulo {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1rem;
+  }
+  .text {
+    font-size: 0.5em;
+  }
+}

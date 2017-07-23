@@ -14,11 +14,13 @@ export class CompartirComponent implements OnInit {
   selectedCover: number;
   color: string;
   familia: string;
-  objetoTitulo: ObjetoTexto;
-  objetoSubtitulo: ObjetoTexto;
+  objetoTitulo: ObjetoTexto[] = [];
+  objetoSubtitulo: ObjetoTexto[] = [];
   urlCompartir: string;
   sizeFontLink: string = "0.8em";
   boolCopy: boolean = false;
+  res: number = 0;
+  coderes:string = "em";
 
   constructor(private route: ActivatedRoute) { }
 
@@ -28,11 +30,11 @@ export class CompartirComponent implements OnInit {
     if (this.urlCompartir.length > 150) {
       this.sizeFontLink = "0.7em";
     }
-    //191
-    //document.location.href = "#header";
-    
-    this.objetoTitulo = new ObjetoTexto('',0);
-    this.objetoSubtitulo = new ObjetoTexto('',0);
+
+    this.objetoTitulo[0] = new ObjetoTexto('',0, true);
+    this.objetoSubtitulo[0] = new ObjetoTexto('',0, true);
+    this.objetoTitulo[1] = new ObjetoTexto('',0, true);
+    this.objetoSubtitulo[1] = new ObjetoTexto('',0, true);
     
     this.data = this.route
       .queryParams
@@ -40,14 +42,23 @@ export class CompartirComponent implements OnInit {
         //Devuelve 1 si no encuentra nada.
         //El + convierte a number. Si es string, no lo uses.
         this.selectedCover = +params['selected'] || 1;
-        this.objetoTitulo.texto = params['titulo'];
-        this.objetoTitulo.size = params['tituloSize'];
-        this.objetoSubtitulo.texto = params['subtitulo'];
-        this.objetoSubtitulo.size = params['subtituloSize'];
+        
+        this.objetoTitulo[0].texto = params['titulo'];
+        this.objetoTitulo[0].size = params['tituloSize'];
+        this.objetoSubtitulo[0].texto = params['subtitulo'];
+        this.objetoSubtitulo[0].size = params['subtituloSize'];
+        
+        this.objetoTitulo[1].texto = params['titulo'];
+        this.objetoTitulo[1].size = params['tituloSizeMobile'];
+        this.objetoSubtitulo[1].texto = params['subtitulo'];
+        this.objetoSubtitulo[1].size = params['subtituloSizeMobile'];
+        
         this.familia = params['familia'];
         this.color = params['color'];
         console.log("La familia es " + this.familia);
       });
+
+      this.checkDevice();
   }
   
   copyClipboard() {
@@ -65,6 +76,14 @@ export class CompartirComponent implements OnInit {
     let top = 0;
     let left = 0;
     window.open(url, '', 'left=200,top='+top+',width='+width+',height='+height+',personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+  }
+  
+  checkDevice() {
+    //Chequear resolucion.
+    if (screen.width < 1000) {
+      this.res = 1;
+      this.coderes = "vw";
+    }
   }
 
 }

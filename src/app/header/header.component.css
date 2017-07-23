@@ -6,6 +6,13 @@
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+@media only screen and (max-width: 1000px) {
+  #header h1 {
+    font-size: 4vw;
+    padding: 1.5em 0 1.5em 0;
+  }
+}
+
 #links a {
   margin: 0em;
 }

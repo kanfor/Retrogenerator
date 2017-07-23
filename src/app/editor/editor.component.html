@@ -4,20 +4,19 @@
   <p id="titulo" class="text-center container">
     Edite el título de la portada
   </p>
-  
-  <div id="edicion" class="col-6">
+  <div id="edicion" class="col-12 col-md-6 contendor">
     <img id="imagen" src="./assets/{{selectedCover}}.jpg">
-    <p id="ttitulo" [ngStyle]="{'font-size': oTitulo.new_size, 'color': color, 'font-family': familia}" class="text-center"><b>{{oTitulo.texto}}</b></p>
-    <p id="tsubtitulo" [ngStyle]="{'font-size': oSubtitulo.new_size, 'color': color, 'font-family': familia}"class="text-center"><b>{{oSubtitulo.texto}}</b></p>
+    <p id="ttitulo" [ngStyle]="{'font-size': oTitulo[res].new_size, 'color': color, 'font-family': familia}" class="text-center"><b>{{oTitulo[res].texto}}</b></p>
+    <p id="tsubtitulo" [ngStyle]="{'font-size': oSubtitulo[res].new_size, 'color': color, 'font-family': familia}"class="text-center"><b>{{oSubtitulo[res].texto}}</b></p>
   </div>
-  <div id="miunputs" class="col-6">
+  <div id="miunputs" class="col-12 col-md-6">
     <div>
       <label><b>TITULO: </b></label>
-      <input maxlength="23" [ngModel]="oTitulo.texto" (ngModelChange)="edicionObjetoTexto($event, oTitulo)" placeholder="Título">
+      <input maxlength="23" [ngModel]="oTitulo[res].texto" (ngModelChange)="edicionObjetoTexto($event, oTitulo[res])" placeholder="Título">
     </div>
     <div>
       <label><b>SUBTITULO: </b></label>
-      <input maxlength="30" [ngModel]="oSubtitulo.texto" (ngModelChange)="edicionObjetoTexto($event, oSubtitulo)" placeholder="Subtítulo">
+      <input maxlength="30" [ngModel]="oSubtitulo[res].texto" (ngModelChange)="edicionObjetoTexto($event, oSubtitulo[res])" placeholder="Subtítulo">
     </div>
     <div>
       <label><b>COLOR: </b></label>
@@ -40,10 +39,12 @@
     </div>
     <button routerLink="/compartir" [queryParams]="{
             selected: selectedCover,
-            titulo: oTitulo.texto,
-            tituloSize: oTitulo.new_size,
-            subtitulo: oSubtitulo.texto,
-            subtituloSize: oSubtitulo.new_size,
+            titulo: oTitulo[0].texto,
+            tituloSize: oTitulo[0].new_size,
+            tituloSizeMobile: oTitulo[1].new_size,
+            subtitulo: oSubtitulo[0].texto,
+            subtituloSize: oSubtitulo[0].new_size,
+            subtituloSizeMobile: oSubtitulo[1].new_size,
             color: color,
             familia: familia
             }" class="btn btn-success" style="cursor:pointer">GENERAR</button>
